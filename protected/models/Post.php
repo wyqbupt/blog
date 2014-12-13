@@ -153,19 +153,19 @@ class Post extends CActiveRecord
 	//auto insert into some information something like 'create_time','author_id'
 	protected function beforeSave()
 	{
-	if(parent::beforeSave())
-	{
-		if($this->isNewRecord)
-		{
-			$this->create_time=$this->update_time=time();
-			$this->author_id=Yii::app()->user->id;
+		if(parent::beforeSave())
+		{	
+			if($this->isNewRecord)
+			{
+				$this->create_time=$this->update_time=time();
+				$this->author_id=Yii::app()->user->id;
+			}
+			else
+				$this->update_time=time();
+			return true;
 		}
-		else
-			$this->update_time=time();
-		return true;
-	}
-		else
-			return false;
+			else
+				return false;
 	}
 	
 	
