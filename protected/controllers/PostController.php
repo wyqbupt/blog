@@ -246,4 +246,35 @@ class PostController extends Controller
             'theDay' => $theDay,
 		));
     }
+	
+	/**
+         * Collect posts issued in specific month
+         */
+    public function actionPostedInMonth()
+    {
+		$month = date('n', $_GET['time']);
+		$year = date('Y', $_GET['time']);
+		if ($_GET['pnc'] == 'n') $month++;
+		if ($_GET['pnc'] == 'p') $month--;
+
+		$criteria = new CDbCriteria(array(
+			'condition' => 'status = '.Post::STATUS_PUBLISHED.' AND create_time > :time1 AND create_time < :time2',
+			'order' => 'update_time DESC',
+			'params' => array(
+				':time1' => ($firstDay = mktime(0,0,0,$month,1,$year)),
+				':time2' => mktime(0,0,0,$month+1,1,$year)),
+		));
+
+		$pages = new CPagination(Post::model()-> count($criteria));
+		$pages->pageSize = Yii::app()->params['postsPerPage'];
+		$pages->applyLimit($criteria);
+
+		$posts = Post::model()->with('author')->findAll($criteria);
+
+		$this->render('month',array(
+			'posts' => $posts,
+			'pages' => $pages,
+			'firstDay' => $firstDay,
+		));
+    }
 }
