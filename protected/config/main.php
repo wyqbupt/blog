@@ -18,6 +18,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'zii.widgets.*',
 	),
 
 	'modules'=>array(
@@ -72,7 +73,17 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-
+		
+		'highslide'=>array(
+			'class'=>'Highslide',
+			'enable'=>true,
+		),
+		
+		'widgetCollapse'=>array(
+			'class'=>'WidgetCollapse',
+			'enable'=>true,
+		),
+		
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

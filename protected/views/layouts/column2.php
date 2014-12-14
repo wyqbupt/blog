@@ -7,6 +7,8 @@
 </div>
 <div class="span-5 last">
 	<div id="sidebar">
+		<?php Yii::app()->highslide->init();?>
+		<?php Yii::app()->widgetCollapse->init(); ?>
 		<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 		<?php $this->widget('Clock'); ?>
 		<?php $this->widget('Calendar');?>
