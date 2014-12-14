@@ -203,7 +203,7 @@ class Post extends CActiveRecord
 		Comment::model()->deleteAll('post_id='.$this->id);
 		Tag::model()->updateFrequency($this->tags, '');
 	}
-		/**
+	/**
 	 * @return array a list of links that point to the post list filtered by every tag of this post
 	 */
 	public function getTagLinks()
@@ -213,4 +213,29 @@ class Post extends CActiveRecord
 			$links[]=CHtml::link(CHtml::encode($tag), array('post/index', 'tag'=>$tag));
 		return $links;
 	}
+	
+	/**
+      * Find articles posted in this month
+      * @return array the articles posted in this month
+      */
+    public function findArticlePostedThisMonth()
+    {
+		if (!empty($_GET['time'])) {
+			$month = date('n', $_GET['time']);
+			$year = date('Y', $_GET['time']);
+			if (!empty($_GET['pnc']) && $_GET['pnc'] == 'n') $month++;
+			if (!empty($_GET['pnc']) && $_GET['pnc'] == 'p') $month--;
+		} else {
+			$month = date('n');
+			$year = date('Y');
+		}
+		return $this->findAll(array(
+			'condition'=>'create_time > :time1 AND create_time < :time2
+                                        AND t.status='.self::STATUS_PUBLISHED,
+			'params'=>array(':time1' => mktime(0,0,0,$month,1,$year),
+					':time2' => mktime(0,0,0,$month+1,1,$year),
+				),
+			'order'=>'t.create_time DESC',
+		));
+    }
 }

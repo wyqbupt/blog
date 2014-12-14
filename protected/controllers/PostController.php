@@ -216,4 +216,34 @@ class PostController extends Controller
 		}
 		return $comment;
 	}
+	
+	/**                                                                                                     
+      * Collect posts issued on specific date                                                                
+    */
+    public function actionPostedOnDate()
+    {
+		$month = date('n', $_GET['time']);
+		$date = date('j', $_GET['time']);
+		$year = date('Y', $_GET['time']);
+
+		$criteria = new CDbCriteria(array(
+			'condition' => 'status='.Post::STATUS_PUBLISHED.' AND create_time > :time1 AND create_time < :time2',
+			'order' => 'update_time DESC',
+			'params' => array(
+				':time1' => ($theDay = mktime(0,0,0,$month,$date,$year)),
+				':time2' => mktime(0,0,0,$month,$date+1,$year)),
+		));
+
+		$pages = new CPagination(Post::model()->count($criteria));
+		$pages->pageSize = Yii::app()->params['postsPerPage'];
+		$pages->applyLimit($criteria);
+
+		$posts = Post::model()->with('author')->findAll($criteria);
+
+		$this->render('date',array(
+			'posts' => $posts,
+            'pages' => $pages,
+            'theDay' => $theDay,
+		));
+    }
 }

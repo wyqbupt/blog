@@ -9,6 +9,7 @@
 	<div id="sidebar">
 		<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 		<?php $this->widget('Clock'); ?>
+		<?php $this->widget('Calendar');?>
 	</div><!-- sidebar -->
 </div>
 <?php $this->endContent(); ?>

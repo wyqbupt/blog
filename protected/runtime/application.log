@@ -1153,3 +1153,117 @@ Stack trace:
 #21 {main}
 REQUEST_URI=/blog/index.php
 ---
+2014/12/14 15:47:54 [error] [exception.CException] exception 'CException' with message 'Post and its behaviors do not have a method or closure named "findArticlePostedThisMonth".' in D:\wamp\www\blog\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\blog\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findArticlePost...', Array)
+#1 D:\wamp\www\blog\protected\components\Calendar.php(46): CActiveRecord->__call('findArticlePost...', Array)
+#2 D:\wamp\www\blog\protected\components\Calendar.php(46): Post->findArticlePostedThisMonth()
+#3 D:\wamp\www\blog\framework\zii\widgets\CPortlet.php(97): Calendar->renderContent()
+#4 D:\wamp\www\blog\framework\web\CBaseController.php(181): CPortlet->run()
+#5 D:\wamp\www\blog\protected\views\layouts\column2.php(12): CBaseController->widget('Calendar')
+#6 D:\wamp\www\blog\framework\web\CBaseController.php(126): require('D:\\wamp\\www\\blo...')
+#7 D:\wamp\www\blog\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\blo...', Array, true)
+#8 D:\wamp\www\blog\framework\web\CController.php(784): CBaseController->renderFile('D:\\wamp\\www\\blo...', Array, true)
+#9 D:\wamp\www\blog\protected\controllers\PostController.php(136): CController->render('index', Array)
+#10 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionIndex()
+#11 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#18 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('')
+#20 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController(false)
+#21 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 D:\wamp\www\blog\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/blog/index.php
+HTTP_REFERER=http://localhost/blog/index.php/site/login
+---
+2014/12/14 15:51:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "PostedOnDate".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('PostedOnDate')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('PostedOnDate')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/PostedOnDa...')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/PostedOnDate?time=1418352848
+HTTP_REFERER=http://localhost/blog/index.php
+---
+2014/12/14 15:53:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "PostedOnDate".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('PostedOnDate')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('PostedOnDate')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/PostedOnDa...')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/PostedOnDate?time=1418352848
+HTTP_REFERER=http://localhost/blog/index.php
+---
+2014/12/14 15:56:01 [error] [exception.CException] exception 'CException' with message 'PostController cannot find the requested view "date".' in D:\wamp\www\blog\framework\web\CController.php:878
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(782): CController->renderPartial('date', Array, true)
+#1 D:\wamp\www\blog\protected\controllers\PostController.php(247): CController->render('date', Array)
+#2 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionPostedOnDate()
+#3 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('PostedOnDate')
+#12 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/PostedOnDa...')
+#13 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\wamp\www\blog\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/blog/index.php/post/PostedOnDate?time=1418352848
+HTTP_REFERER=http://localhost/blog/index.php
+---
+2014/12/14 16:13:26 [error] [exception.CException] exception 'CException' with message 'PostController cannot find the requested view "date".' in D:\wamp\www\blog\framework\web\CController.php:878
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(782): CController->renderPartial('date', Array, true)
+#1 D:\wamp\www\blog\protected\controllers\PostController.php(247): CController->render('date', Array)
+#2 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionPostedOnDate()
+#3 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('PostedOnDate')
+#12 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/PostedOnDa...')
+#13 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\wamp\www\blog\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/blog/index.php/post/PostedOnDate?time=1418352848
+HTTP_REFERER=http://localhost/blog/index.php
+---
+2014/12/14 16:18:41 [error] [exception.CException] exception 'CException' with message 'PostController cannot find the requested view "date".' in D:\wamp\www\blog\framework\web\CController.php:878
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(782): CController->renderPartial('date', Array, true)
+#1 D:\wamp\www\blog\protected\controllers\PostController.php(247): CController->render('date', Array)
+#2 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionPostedOnDate()
+#3 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('PostedOnDate')
+#12 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/PostedOnDa...')
+#13 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\wamp\www\blog\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/blog/index.php/post/PostedOnDate?time=1418352848
+HTTP_REFERER=http://localhost/blog/index.php
+---
