@@ -12,6 +12,9 @@
 		<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 		<?php $this->widget('Clock'); ?>
 		<?php $this->widget('Calendar');?>
+		<?php $this->widget('TagCloud', array(
+				'maxTags'=>Yii::app()->params['tagCloudCount'],
+			)); ?>
 	</div><!-- sidebar -->
 </div>
 <?php $this->endContent(); ?>

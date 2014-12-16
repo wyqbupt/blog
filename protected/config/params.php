@@ -8,6 +8,11 @@ return array(
 	'commentNeedApproval'=>true,
 	// maximum number of posts in feed
 	'postsPerFeedCount'=>20,
+	// maximum number of tags that can be displayed in tag cloud portlet
+	'tagCloudCount'=>20,
+	
+	
+	
         // configurations for highslide extension
         'imageHome'=>'images/',
         'imageHomeAbs'=>dirname(__FILE__).'/../../images/',
