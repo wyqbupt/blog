@@ -1456,3 +1456,269 @@ REQUEST_URI=/blog/index.php
 in D:\wamp\www\blog\protected\views\post\_view.php (6)
 in D:\wamp\www\blog\protected\views\post\index.php (9)
 in D:\wamp\www\blog\protected\controllers\PostController.php (136)
+2014/12/22 22:28:56 [error] [php] include(RecentCommnets.php): failed to open stream: No such file or directory (D:\wamp\www\blog\framework\YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 D:\wamp\www\blog\framework\YiiBase.php(303): class_exists()
+#2 D:\wamp\www\blog\framework\web\CWidgetFactory.php(146): import()
+#3 D:\wamp\www\blog\framework\web\CBaseController.php(146): CWidgetFactory->createWidget()
+#4 D:\wamp\www\blog\framework\web\CBaseController.php(180): PostController->createWidget()
+#5 D:\wamp\www\blog\protected\views\layouts\column2.php(15): PostController->widget()
+#6 D:\wamp\www\blog\framework\web\CBaseController.php(126): require()
+#7 D:\wamp\www\blog\framework\web\CBaseController.php(95): PostController->renderInternal()
+#8 D:\wamp\www\blog\framework\web\CController.php(784): PostController->renderFile()
+#9 D:\wamp\www\blog\protected\controllers\PostController.php(136): PostController->render()
+#10 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionIndex()
+#11 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#13 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#16 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#18 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#19 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#20 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php
+in D:\wamp\www\blog\protected\views\layouts\column2.php (15)
+in D:\wamp\www\blog\protected\controllers\PostController.php (136)
+in D:\wamp\www\blog\index.php (14)
+2014/12/22 22:29:30 [error] [exception.CException] exception 'CException' with message 'Comment and its behaviors do not have a method or closure named "findRecentComments".' in D:\wamp\www\blog\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\blog\framework\db\ar\CActiveRecord.php(227): CComponent->__call('findRecentComme...', Array)
+#1 D:\wamp\www\blog\protected\components\RecentComments.php(10): CActiveRecord->__call('findRecentComme...', Array)
+#2 D:\wamp\www\blog\protected\components\RecentComments.php(10): Comment->findRecentComments(10)
+#3 D:\wamp\www\blog\protected\components\views\recentComments.php(2): RecentComments->getRecentComments()
+#4 D:\wamp\www\blog\framework\web\CBaseController.php(130): require('D:\\wamp\\www\\blo...')
+#5 D:\wamp\www\blog\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\blo...', NULL, false)
+#6 D:\wamp\www\blog\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('D:\\wamp\\www\\blo...', NULL, false)
+#7 D:\wamp\www\blog\protected\components\RecentComments.php(15): CWidget->render('recentComments')
+#8 D:\wamp\www\blog\framework\zii\widgets\CPortlet.php(97): RecentComments->renderContent()
+#9 D:\wamp\www\blog\framework\web\CBaseController.php(181): CPortlet->run()
+#10 D:\wamp\www\blog\protected\views\layouts\column2.php(15): CBaseController->widget('RecentComments')
+#11 D:\wamp\www\blog\framework\web\CBaseController.php(126): require('D:\\wamp\\www\\blo...')
+#12 D:\wamp\www\blog\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\wamp\\www\\blo...', Array, true)
+#13 D:\wamp\www\blog\framework\web\CController.php(784): CBaseController->renderFile('D:\\wamp\\www\\blo...', Array, true)
+#14 D:\wamp\www\blog\protected\controllers\PostController.php(136): CController->render('index', Array)
+#15 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionIndex()
+#16 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#23 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('')
+#25 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController(false)
+#26 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 D:\wamp\www\blog\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/blog/index.php
+---
+2014/12/22 23:08:33 [error] [php] include(SiteSearchForm.php): failed to open stream: No such file or directory (D:\wamp\www\blog\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\wamp\www\blog\protected\components\SiteSearch.php(8): spl_autoload_call()
+#1 D:\wamp\www\blog\framework\zii\widgets\CPortlet.php(97): SiteSearch->renderContent()
+#2 D:\wamp\www\blog\framework\web\CBaseController.php(181): SiteSearch->run()
+#3 D:\wamp\www\blog\protected\views\layouts\column2.php(13): PostController->widget()
+#4 D:\wamp\www\blog\framework\web\CBaseController.php(126): require()
+#5 D:\wamp\www\blog\framework\web\CBaseController.php(95): PostController->renderInternal()
+#6 D:\wamp\www\blog\framework\web\CController.php(784): PostController->renderFile()
+#7 D:\wamp\www\blog\protected\controllers\PostController.php(171): PostController->render()
+#8 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionIndex()
+#9 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#11 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#14 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#17 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#18 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php
+in D:\wamp\www\blog\protected\components\SiteSearch.php (8)
+in D:\wamp\www\blog\protected\views\layouts\column2.php (13)
+in D:\wamp\www\blog\protected\controllers\PostController.php (171)
+2014/12/22 23:13:33 [error] [php] Undefined index: searchString (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/22 23:19:57 [error] [php] Undefined index: searchString (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/22 23:19:58 [error] [php] Undefined index: searchString (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/22 23:20:23 [error] [php] Undefined index: string (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/22 23:20:24 [error] [php] Undefined index: string (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/23 09:16:28 [error] [exception.CException] exception 'CException' with message 'PostController cannot find the requested view "found".' in D:\wamp\www\blog\framework\web\CController.php:878
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(782): CController->renderPartial('found', Array, true)
+#1 D:\wamp\www\blog\protected\controllers\PostController.php(74): CController->render('found', Array)
+#2 D:\wamp\www\blog\framework\web\actions\CInlineAction.php(49): PostController->actionSearch()
+#3 D:\wamp\www\blog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\wamp\www\blog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('search')
+#12 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/search')
+#13 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 D:\wamp\www\blog\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/blog/index.php/post/search
+HTTP_REFERER=http://localhost/blog/index.php/post/index
+---
+2014/12/23 09:47:36 [error] [php] Undefined index: searchString (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/23 09:47:54 [error] [php] Undefined index: searchString (D:\wamp\www\blog\protected\controllers\PostController.php:52)
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\wamp\www\blog\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\wamp\www\blog\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\wamp\www\blog\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\wamp\www\blog\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\wamp\www\blog\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\wamp\www\blog\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\wamp\www\blog\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\wamp\www\blog\index.php(14): CWebApplication->run()
+REQUEST_URI=/blog/index.php/post/search
+in D:\wamp\www\blog\protected\controllers\PostController.php (52)
+in D:\wamp\www\blog\index.php (14)
+2014/12/23 10:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sdfdsf".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('sdfdsf')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('sdfdsf')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/sdfdsf')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/sdfdsf
+HTTP_REFERER=http://localhost/blog/index.php/post/index
+---
+2014/12/23 10:09:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sdfdsf".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('sdfdsf')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('sdfdsf')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/sdfdsf')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/sdfdsf
+HTTP_REFERER=http://localhost/blog/index.php/post/index
+---
+2014/12/23 10:24:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sdfdsf".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('sdfdsf')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('sdfdsf')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/sdfdsf')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/sdfdsf
+HTTP_REFERER=http://localhost/blog/index.php/post/index
+---
+2014/12/23 10:24:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sdfdsf".' in D:\wamp\www\blog\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\blog\framework\web\CController.php(270): CController->missingAction('sdfdsf')
+#1 D:\wamp\www\blog\framework\web\CWebApplication.php(282): CController->run('sdfdsf')
+#2 D:\wamp\www\blog\framework\web\CWebApplication.php(141): CWebApplication->runController('post/sdfdsf')
+#3 D:\wamp\www\blog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 D:\wamp\www\blog\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog/index.php/post/sdfdsf
+HTTP_REFERER=http://localhost/blog/index.php/post/index
+---

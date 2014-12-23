@@ -39,6 +39,41 @@ class PostController extends Controller
 			),
 		);
 	}
+	
+	public function actionSearch()
+    {
+		$search = new SiteSearchForm;
+                
+		if(isset($_POST['SiteSearchForm'])) {
+			$search->attributes = $_POST['SiteSearchForm'];
+			$_GET['searchString'] = $search->string;
+		}	 
+		else {
+			$search->string = $_GET['searchString'];
+		}
+		
+		$criteria = new CDbCriteria(array(
+			'condition' => 'status='.Post::STATUS_PUBLISHED.' AND content LIKE :keyword',
+			'order' => 'create_time DESC',
+			'params' => array(
+				':keyword' => '%'.$search->string.'%',
+			),
+		));
+               
+		$postCount = Post::model()->count($criteria);
+		$pages = new CPagination($postCount);
+		$pages->pageSize = Yii::app()->params['postsPerPage'];
+		$pages->applyLimit($criteria);
+		
+		$posts = Post::model()->findAll($criteria);
+					    
+		$this->render('found',array(
+			'posts' => $posts,
+			'pages' => $pages,
+			'search' => $search,
+		));
+    }
+	
 
 	/**
 	 * Displays a particular model.

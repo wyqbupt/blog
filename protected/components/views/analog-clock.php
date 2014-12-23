@@ -1,6 +1,6 @@
 <center>
 <?php
-  $clockOffsetX = 26;
+  $clockOffsetX = 36;
   $clockOffsetY = 2;
 ?>
 <div style="position: relative;">
