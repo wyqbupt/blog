@@ -11,12 +11,14 @@
 		<?php Yii::app()->widgetCollapse->init(); ?>
 		<?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
 		<?php $this->widget('SiteSearch');?>
+
 		<?php $this->widget('Clock'); ?>
 		<?php $this->widget('Calendar');?>
 		<?php $this->widget('RecentComments');?>
 		<?php $this->widget('TagCloud', array(
 				'maxTags'=>Yii::app()->params['tagCloudCount'],
 			)); ?>
+		<?php $this->widget('Links');?>
 	</div><!-- sidebar -->
 </div>
 <?php $this->endContent(); ?>
